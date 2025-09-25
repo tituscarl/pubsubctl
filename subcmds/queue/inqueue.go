@@ -1,0 +1,44 @@
+package queue
+
+import (
+	"context"
+	"fmt"
+	"log"
+	"strings"
+
+	pb "github.com/alphauslabs/pubsub-sdk-go"
+	"github.com/spf13/cobra"
+	"github.com/tituscarl/pubsubctl/logger"
+)
+
+var (
+	topic        string
+	subscription string
+)
+
+func InQueueCmd() *cobra.Command {
+	cmd := &cobra.Command{
+		Use:   "list",
+		Short: "List number of messages per subscriptions in queue",
+		Run: func(cmd *cobra.Command, args []string) {
+			client, err := pb.New()
+			if err != nil {
+				log.Fatal("Failed to create pubsub client:", err)
+			}
+			defer client.Close()
+			ctx := context.Background()
+			res, err := client.GetNumberOfMessages(ctx, topic, subscription)
+			if err != nil {
+				logger.Fail("Error getting number of messages:", err)
+				return
+			}
+			for _, r := range res {
+				parts := strings.Split(r.Subscription, "|")
+				logger.Info(fmt.Sprintf("sub=%s count=%d", parts[1], r.CurrentMessagesAvailable))
+			}
+		},
+	}
+	cmd.Flags().StringVar(&topic, "topic", "", "Filter by topic name")
+	cmd.Flags().StringVar(&subscription, "subscription", "", "Filter by subscription name")
+	return cmd
+}
