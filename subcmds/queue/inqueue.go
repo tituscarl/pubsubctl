@@ -3,7 +3,6 @@ package queue
 import (
 	"context"
 	"fmt"
-	"log"
 	"strings"
 
 	pb "github.com/alphauslabs/pubsub-sdk-go"
@@ -23,7 +22,8 @@ func InQueueCmd() *cobra.Command {
 		Run: func(cmd *cobra.Command, args []string) {
 			client, err := pb.New()
 			if err != nil {
-				log.Fatal("Failed to create pubsub client:", err)
+				logger.Fail("Failed to create pubsub client:", err)
+				return
 			}
 			defer client.Close()
 			ctx := context.Background()

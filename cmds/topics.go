@@ -8,8 +8,8 @@ import (
 func TopicsCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "topics",
-		Short: "Manage Pub/Sub topics",
-		Long:  `Create, delete, and list Pub/Sub topics.`,
+		Short: "Manage pubsub topics",
+		Long:  `Create, delete, and list pubsub topics.`,
 	}
 	cmd.AddCommand(topics.ListCmd())
 	return cmd
