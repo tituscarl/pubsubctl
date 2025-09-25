@@ -34,7 +34,7 @@ func InQueueCmd() *cobra.Command {
 			}
 			for _, r := range res {
 				parts := strings.Split(r.Subscription, "|")
-				logger.Info(fmt.Sprintf("sub=%s count=%d", parts[1], r.CurrentMessagesAvailable))
+				logger.Info(fmt.Sprintf("%s ---> %d", parts[1], r.CurrentMessagesAvailable))
 			}
 		},
 	}
