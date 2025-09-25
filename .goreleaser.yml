@@ -1,0 +1,34 @@
+version: 2
+builds:
+- id: "pubsubctl"
+  binary: pubsubctl
+  goos:
+  - linux
+  - darwin
+  goarch:
+  - amd64
+checksum:
+  name_template: 'checksums.txt'
+dist: /tmp/pubsubctl/dist
+changelog:
+  sort: asc
+  filters:
+    exclude:
+    - '^docs:'
+    - '^test:'
+release:
+  github:
+    owner: tituscarl
+    name: pubsubctl
+brews:
+- repository:
+    owner: tituscarl
+    name: homebrew-tap
+  name: pubsubctl
+  homepage: "https://github.com/tituscarl/pubsubctl"
+  description: "A command-line tool for managing internal pubsub resources"
+  directory: Formula
+  install: |
+    bin.install "pubsubctl"
+  test: |
+    assert_match /Usage: pubsubctl/, shell_output("#{bin}/pubsubctl -h", 0)
