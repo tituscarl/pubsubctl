@@ -7,7 +7,7 @@ MODULE = pubsubctl
 all: $(MODULE)
 
 $(MODULE):| $(BASE)
-	@GO111MODULE=on GOFLAGS=-mod=vendor go build -v -trimpath -o $(BASE)/bin/$@
+	@GO111MODULE=on go build -v -trimpath -o $(BASE)/bin/$@
 
 $(BASE):
 	@mkdir -p $(dir $@)

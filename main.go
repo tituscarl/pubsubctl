@@ -15,6 +15,7 @@ func main() {
 	}
 
 	cmd.AddCommand(cmds.TopicsCmd())
+	cmd.AddCommand(cmds.SubscriptionCmd())
 	cmd.AddCommand(cmds.QueueCmd())
 	err := cmd.Execute()
 	if err != nil {

@@ -3,7 +3,7 @@ module github.com/tituscarl/pubsubctl
 go 1.25.0
 
 require (
-	github.com/alphauslabs/pubsub-sdk-go v0.0.59
+	github.com/alphauslabs/pubsub-sdk-go v0.0.61
 	github.com/fatih/color v1.18.0
 	github.com/spf13/cobra v1.10.1
 )
