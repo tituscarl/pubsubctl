@@ -15,10 +15,10 @@ var (
 	subscription string
 )
 
-func InQueueCmd() *cobra.Command {
+func CountCmd() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "list",
-		Short: "List number of messages per subscriptions in queue",
+		Use:   "count",
+		Short: "Count number of messages per subscriptions in queue",
 		Run: func(cmd *cobra.Command, args []string) {
 			client, err := pb.New()
 			if err != nil {
@@ -34,7 +34,7 @@ func InQueueCmd() *cobra.Command {
 			}
 			for _, r := range res {
 				parts := strings.Split(r.Subscription, "|")
-				logger.Info(fmt.Sprintf("%s ---> %d", parts[1], r.CurrentMessagesAvailable))
+				logger.Info(fmt.Sprintf("%s -> %d", parts[1], r.CurrentMessagesAvailable))
 			}
 		},
 	}

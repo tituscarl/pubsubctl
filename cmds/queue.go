@@ -11,6 +11,6 @@ func QueueCmd() *cobra.Command {
 		Short: "Manage pubsub queues",
 		Long:  `Manage pubsub message queues.`,
 	}
-	cmd.AddCommand(queue.InQueueCmd())
+	cmd.AddCommand(queue.CountCmd())
 	return cmd
 }
