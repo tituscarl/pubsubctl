@@ -3,9 +3,11 @@ package queue
 import (
 	"context"
 	"fmt"
+	"io"
+	"log"
 	"strings"
 
-	pb "github.com/alphauslabs/pubsub-sdk-go"
+	"github.com/alphauslabs/pubsub-sdk-go"
 	"github.com/spf13/cobra"
 	"github.com/tituscarl/pubsubctl/logger"
 )
@@ -20,7 +22,7 @@ func CountCmd() *cobra.Command {
 		Use:   "count",
 		Short: "Count number of messages per subscriptions in queue",
 		Run: func(cmd *cobra.Command, args []string) {
-			client, err := pb.New()
+			client, err := pubsub.New(pubsub.WithLogger(log.New(io.Discard, "", 0)))
 			if err != nil {
 				logger.Fail("Failed to create pubsub client:", err)
 				return

@@ -3,6 +3,8 @@ package topic
 import (
 	"context"
 	"fmt"
+	"io"
+	"log"
 
 	"github.com/alphauslabs/pubsub-sdk-go"
 	"github.com/spf13/cobra"
@@ -15,7 +17,7 @@ func ListCmd() *cobra.Command {
 		Short: "List all pubsub topics",
 		Long:  `List all pubsub topics.`,
 		Run: func(cmd *cobra.Command, args []string) {
-			client, err := pubsub.New()
+			client, err := pubsub.New(pubsub.WithLogger(log.New(io.Discard, "", 0)))
 			if err != nil {
 				logger.Fail(fmt.Sprintf("Failed to create pubsub client: %v", err))
 				return
