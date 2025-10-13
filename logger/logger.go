@@ -10,12 +10,12 @@ import (
 
 func Info(v ...any) {
 	m := fmt.Sprintln(v...)
-	log.Printf("%s %s", color.GreenString("[info]"), m)
+	log.Printf("%s %s", color.GreenString("[INFO]"), m)
 }
 
 func Fail(v ...any) {
 	m := fmt.Sprintln(v...)
-	log.Printf("%s %s", color.RedString("[error]"), m)
+	log.Printf("%s %s", color.RedString("[ERROR]"), m)
 }
 
 func Failx(v ...any) {
