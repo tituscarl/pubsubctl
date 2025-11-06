@@ -4,10 +4,10 @@ cloud.google.com/go/auth/oauth2adapt v0.2.8 h1:keo8NaayQZ6wimpNSmW5OPc283g65QNIi
 cloud.google.com/go/auth/oauth2adapt v0.2.8/go.mod h1:XQ9y31RkqZCcwJWNSx2Xvric3RrU88hAYYbjDWYDL+c=
 cloud.google.com/go/compute/metadata v0.6.0 h1:A6hENjEsCDtC1k8byVsgwvVcioamEHvZ4j01OwKxG9I=
 cloud.google.com/go/compute/metadata v0.6.0/go.mod h1:FjyFAW1MW0C203CEOMDTu3Dk1FlqW3Rga40jzHL4hfg=
-github.com/alphauslabs/pubsub-proto v0.2.4 h1:c5S/hQcxEnkw6LHwAXu9NwxRCxEndh3UvjPtiz6qc/w=
-github.com/alphauslabs/pubsub-proto v0.2.4/go.mod h1:sfDRyxsVmiZtG22g8DUGajSp4qOxCkDrwl655xHNDPg=
-github.com/alphauslabs/pubsub-sdk-go v0.0.61 h1:NQGAcALtXekQIWV0AXwLrEfQcax/mnjGuitm5Oye3N8=
-github.com/alphauslabs/pubsub-sdk-go v0.0.61/go.mod h1:8Tg+X1aI37rk+igB0GsqSgVftMhtHY7/0ED5119Auoc=
+github.com/alphauslabs/pubsub-proto v0.2.10 h1:IbHK7Godfu7iBtD8qWGNp1NhI70ZQhLjCCNDJ2XEOng=
+github.com/alphauslabs/pubsub-proto v0.2.10/go.mod h1:sfDRyxsVmiZtG22g8DUGajSp4qOxCkDrwl655xHNDPg=
+github.com/alphauslabs/pubsub-sdk-go v0.0.82 h1:32yjR59bDcXfi2R4UmQfDs3+NtbRsFqr63GIEI5aY6c=
+github.com/alphauslabs/pubsub-sdk-go v0.0.82/go.mod h1:SKgakPLV01JINSqYcOp6u4Sku4prdRhCJ6YAC6V6JFU=
 github.com/cpuguy83/go-md2man/v2 v2.0.6/go.mod h1:oOW0eioCTA6cOiMLiUPZOpcVxMig6NIQQ7OS05n1F4g=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=

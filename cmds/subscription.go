@@ -12,5 +12,6 @@ func SubscriptionCmd() *cobra.Command {
 		Long:  `Create, delete, and list pubsub subscriptions.`,
 	}
 	cmd.AddCommand(subscription.ListCmd())
+	cmd.AddCommand(subscription.GetCmd())
 	return cmd
 }

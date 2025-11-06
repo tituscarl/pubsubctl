@@ -3,7 +3,7 @@ module github.com/tituscarl/pubsubctl
 go 1.25.0
 
 require (
-	github.com/alphauslabs/pubsub-sdk-go v0.0.61
+	github.com/alphauslabs/pubsub-sdk-go v0.0.82
 	github.com/fatih/color v1.18.0
 	github.com/spf13/cobra v1.10.1
 )
@@ -12,7 +12,7 @@ require (
 	cloud.google.com/go/auth v0.16.0 // indirect
 	cloud.google.com/go/auth/oauth2adapt v0.2.8 // indirect
 	cloud.google.com/go/compute/metadata v0.6.0 // indirect
-	github.com/alphauslabs/pubsub-proto v0.2.4 // indirect
+	github.com/alphauslabs/pubsub-proto v0.2.10 // indirect
 	github.com/dchest/uniuri v1.2.0 // indirect
 	github.com/felixge/httpsnoop v1.0.4 // indirect
 	github.com/go-logr/logr v1.4.2 // indirect
