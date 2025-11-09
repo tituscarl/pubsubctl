@@ -13,7 +13,7 @@ import (
 
 func GetCmd() *cobra.Command {
 	return &cobra.Command{
-		Use:   "get",
+		Use:   "get <topic>",
 		Short: "Get a pubsub topic",
 		Long:  `Get details of a specific pubsub topic.`,
 		Run: func(cmd *cobra.Command, args []string) {
