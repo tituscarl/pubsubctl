@@ -11,8 +11,6 @@ import (
 	"github.com/tituscarl/pubsubctl/logger"
 )
 
-var topic string
-
 func PurgeCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "purge <topic>",
