@@ -12,15 +12,10 @@ import (
 	"github.com/tituscarl/pubsubctl/logger"
 )
 
-var (
-	topic        string
-	subscription string
-)
-
 func CountCmd() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "count",
-		Short: "Count number of messages per subscriptions in queue",
+		Use:   "count <topic> <subscription>",
+		Short: "Count number of messages per subscriptions in queue, optionally you can filter it by subscription or topic.",
 		Run: func(cmd *cobra.Command, args []string) {
 			client, err := pubsub.New(pubsub.WithLogger(log.New(io.Discard, "", 0)))
 			if err != nil {
@@ -29,7 +24,15 @@ func CountCmd() *cobra.Command {
 			}
 			defer client.Close()
 			ctx := context.Background()
-			res, err := client.GetNumberOfMessages(ctx, topic, subscription)
+			sub := ""
+			topic := ""
+			if len(args) > 0 {
+				topic = args[0]
+			}
+			if len(args) > 1 {
+				sub = args[1]
+			}
+			res, err := client.GetNumberOfMessages(ctx, topic, sub)
 			if err != nil {
 				logger.Fail("Error getting number of messages:", err)
 				return
@@ -40,7 +43,6 @@ func CountCmd() *cobra.Command {
 			}
 		},
 	}
-	cmd.Flags().StringVar(&topic, "topic", "", "Filter by topic name")
-	cmd.Flags().StringVar(&subscription, "subscription", "", "Filter by subscription name")
+
 	return cmd
 }
