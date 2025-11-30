@@ -37,10 +37,13 @@ func CountCmd() *cobra.Command {
 				logger.Fail("Error getting number of messages:", err)
 				return
 			}
+			var total int32
 			for _, r := range res {
 				parts := strings.Split(r.Subscription, "|")
 				logger.Info(fmt.Sprintf("%s -> %d", parts[1], r.CurrentMessagesAvailable))
+				total += r.CurrentMessagesAvailable
 			}
+			logger.Info(fmt.Sprintf("Total -> %d", total))
 		},
 	}
 
